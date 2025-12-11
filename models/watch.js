@@ -1,9 +1,10 @@
 const mongoose = require("mongoose")
+const constants = require('../config/constants')
 const watchSchema = new mongoose.Schema({
     company: {
         type: String,
         required: true,
-        enum: ["Rolex", "Omega", "hublot", "Richard Mille"],
+        enum: constants.companyOptions,
     },
     model: {
         type: String,

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a Watch</title>
+  </head>
+  <body>
+    <h1>Add a new Watch</h1>
+    <form action="/watches" method="post">
+        <label for="company">Company: </label>
+        <select name="company" id="company" required>
+           <% companyOptions.forEach( opt => { %>
+                <option value="<%=opt%>"><%=opt%></option>
+           <% }) %>
+        </select>
+
+        <label for="model">Watch Model: </label>
+        <input type="text" name="model" id="model" required>
+
+        <label for="details">Watch Details: </label>
+        <textarea name="details" id="details" required></textarea>
+
+        <label for="price">Price: </label>
+       <input type="text" name="price" id="price" min="0" required>
+
+        <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
