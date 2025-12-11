@@ -27,5 +27,5 @@ const watchSchema = new mongoose.Schema({
     timestamps: true,
 }
 )
-const Watches = mongoose.model("Watches", watchSchema)
-module.exports = Watches
+const Watch = mongoose.model("Watches", watchSchema)
+module.exports = Watch
