@@ -24,4 +24,14 @@ router.get("/new", async (req,res) => {
         console.error("Error Occured",err)
     }
 })
+router.post("/", async (req,res) => {
+    try{
+        req.body.owner = req.session.user._id
+        await Watch.create(req.body)
+        res.redirect("/watches")
+    }
+    catch(err){
+        console.error("Error Occured",err)
+    }
+})
 module.exports = router
