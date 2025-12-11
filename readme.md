@@ -14,7 +14,7 @@
 5. As a user, I want to see added watches with their descriptions.
 
 
-## ERD
+## ERD:
 
 ![mockup picture](./assets/ERD.jpg)
 
