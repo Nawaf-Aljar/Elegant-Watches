@@ -43,4 +43,19 @@ router.get("/:id", async (req,res) => {
         console.error("Error Occured",err)
     }
 })
+router.delete("/:id", async (req,res) => {
+    try{
+        const watch = await Watch.findById(req.params.id)
+        if(watch.owner.equals(req.session.user._id)){
+            await watch.deleteOne()
+            res.redirect("/watches")
+        }
+        else {
+            throw new Error()
+        }
+    }
+    catch(err){
+        console.error("Error Occured",err)
+    }
+})
 module.exports = router

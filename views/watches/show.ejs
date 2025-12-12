@@ -13,9 +13,9 @@
     <p>Description: <%= watch.details %></p>
     <p>Price: <%= watch.price %> BD</p>
     <% if (watch.owner._id.equals(user._id)) { %>
-    <p>You own this!</p>
-    <% } else { %>
-    <p>You don't own this, <%= watch.owner.username %> does!</p>
+    <form action="/watches/<%= watch._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
     <% } %>
   </body>
 </html>
