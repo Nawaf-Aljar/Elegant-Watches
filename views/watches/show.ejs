@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Details</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Watch Details</h1>
+    <p>Watch Company: <%= watch.company %></p>
+    <p>Watch Model: <%= watch.model %></p>
+    <p>Description: <%= watch.details %></p>
+    <p>Price: <%= watch.price %> BD</p>
+    <% if (watch.owner._id.equals(user._id)) { %>
+    <p>You own this!</p>
+    <% } else { %>
+    <p>You don't own this, <%= watch.owner.username %> does!</p>
+    <% } %>
+  </body>
+</html>

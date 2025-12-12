@@ -34,4 +34,13 @@ router.post("/", async (req,res) => {
         console.error("Error Occured",err)
     }
 })
+router.get("/:id", async (req,res) => {
+    try{
+        const watch = await Watch.findById(req.params.id).populate("owner")
+        res.render("watches/show.ejs", {watch})
+    }
+    catch(err){
+        console.error("Error Occured",err)
+    }
+})
 module.exports = router
