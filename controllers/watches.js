@@ -58,4 +58,30 @@ router.delete("/:id", async (req,res) => {
         console.error("Error Occured",err)
     }
 })
+router.get("/:id/edit", async (req,res) => {
+    try{
+        const watch = await Watch.findById(req.params.id)
+        res.render("watches/edit.ejs", {watch, companyOptions})
+    }
+    catch(err){
+        console.error("Error Occured",err)
+    }
+})
+router.put("/:id", async (req,res) => {
+   try {
+    const watch = await Watch.findById(req.params.id)
+    const isOwner = watch.owner.equals(req.session.user._id)
+    if(isOwner){
+        await watch.updateOne(req.body)
+        res.redirect(`/watches/${req.params.id}`)
+        }
+    else {
+        res.redirect(`/watches/${req.params.id}`)
+        }
+    }
+    catch(err){
+        console.error("Error Occured",err)
+    }
+})
+
 module.exports = router

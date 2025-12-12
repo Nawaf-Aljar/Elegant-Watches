@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit a Watch</title>
+  </head>
+  <body>
+    <h1>Edit a Watch</h1>
+    <form action="/watches/<%= watch._id %>?_method=PUT" method="post">
+        <label for="company">Company: </label>
+        <select name="company" id="company" required>
+           <% companyOptions.forEach( opt => { %>
+                <option value="<%=opt%>" <%= watch.company === opt ? "selected" : "" %>><%=opt%></option>
+           <% }) %>
+        </select>
+
+        <label for="model">Watch Model: </label>
+        <input type="text" name="model" id="model" required value="<%= watch.model %>">
+
+        <label for="details">Watch Details: </label>
+        <textarea name="details" id="details" required><%= watch.details %></textarea>
+
+        <label for="price">Price: </label>
+       <input type="text" name="price" id="price" min="0" required value="<%= watch.price %>">
+
+        <button type="submit">Edit a watch</button>
+    </form>
+  </body>
+</html>

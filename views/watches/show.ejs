@@ -16,6 +16,7 @@
     <form action="/watches/<%= watch._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
     </form>
+        <p><a href="/watches/<%= watch._id %>/edit">Edit</a></p>
     <% } %>
   </body>
 </html>
