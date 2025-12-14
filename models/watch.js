@@ -19,6 +19,10 @@ const watchSchema = new mongoose.Schema({
         required: true,
         min: 0,
     },
+    imglink:{
+        type: String,
+        required: true,
+    },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"

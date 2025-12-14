@@ -12,6 +12,7 @@
     <p>Watch Model: <%= watch.model %></p>
     <p>Description: <%= watch.details %></p>
     <p>Price: <%= watch.price %> BD</p>
+    <img src="<%= watch.imglink %>" alt="Watch image">
     <% if (watch.owner._id.equals(user._id)) { %>
     <form action="/watches/<%= watch._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
