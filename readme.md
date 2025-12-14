@@ -16,7 +16,7 @@
 
 ## ERD:
 
-![mockup picture](./assets/ERD.jpg)
+![mockup picture](/public/assets/ERD.jpg)
 
 
 ## Techonologies Used:

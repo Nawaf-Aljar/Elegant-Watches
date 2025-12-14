@@ -1,3 +1,39 @@
 * {
   box-sizing: border-box;
 }
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.logo{
+  font-weight: 600;
+}
+.watchCard{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border: black solid  2px;
+  border-radius: 15px;
+  margin: 0 auto;
+  height: 100px;
+  width: 200px;
+  text-align: center;
+}
+.userContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid  2px;
+    border-radius: 15px;
+    height: 400px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+h1{
+  text-align: center;
+}
