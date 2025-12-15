@@ -10,12 +10,13 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Here's all the Watches</h1>
     <p><a href="/watches/new">Add a new watch</a></p>
+    <div class="watch-cards-container">
       <% watches.forEach(watch => { %>
-        <div class="watchCard">
-          <a href="/watches/<%= watch._id %>">
-          <P><%= watch.company %> <%= watch.model %></P>
-          </a>
+        <div class="watch-card">
+        <%= watch.company %> <%= watch.model %>
+         <a href="/watches/<%= watch._id %>">Details</a>
         </div>
-     <% }); %>
+        <% }); %>
+    </div>
   </body>
 </html>

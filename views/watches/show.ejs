@@ -9,16 +9,20 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Watch Details</h1>
-    <p>Watch Company: <%= watch.company %></p>
-    <p>Watch Model: <%= watch.model %></p>
-    <p>Description: <%= watch.details %></p>
-    <p>Price: <%= watch.price %> BD</p>
-    <img src="<%= watch.imglink %>" alt="Watch image">
-    <% if (watch.owner._id.equals(user._id)) { %>
-    <form action="/watches/<%= watch._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-    </form>
-        <p><a href="/watches/<%= watch._id %>/edit">Edit</a></p>
-    <% } %>
+    <div id="show-con">
+      <img src="<%= watch.imglink %>" alt="Watch image">
+      <div class="display-details">
+      <p>Watch Company: <%= watch.company %></p>
+      <p>Watch Model: <%= watch.model %></p>
+      <p>Description: <%= watch.details %></p>
+      <p>Price: <%= watch.price %> BD</p>
+      <% if (watch.owner._id.equals(user._id)) { %>
+      <form action="/watches/<%= watch._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+      </form>
+          <p><a href="/watches/<%= watch._id %>/edit">Edit</a></p>
+      <% } %>
+      </div>
+    </div>
   </body>
 </html>
