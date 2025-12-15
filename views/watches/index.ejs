@@ -8,15 +8,25 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="container">
     <h1>Here's all the Watches</h1>
-    <p><a href="/watches/new">Add a new watch</a></p>
+    <p><a href="/watches/new" class="add-btn">Add a new watch</a></p>
     <div class="watch-cards-container">
       <% watches.forEach(watch => { %>
         <div class="watch-card">
-        <%= watch.company %> <%= watch.model %>
+          <div class="watch-img-container">
+            <img src="<%= watch.imglink %>" alt="" class="watch-img">
+          </div>
+          <div class="watch-content">
+            <H2 class="watch-brand"><%= watch.company %></H2>
+            <H3 class="watch-model"><%= watch.model %></H3>
+          </div>
+        <div class="watch-action">
          <a href="/watches/<%= watch._id %>">Details</a>
+         </div>
         </div>
         <% }); %>
+    </div>
     </div>
   </body>
 </html>

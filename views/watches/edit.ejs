@@ -7,6 +7,7 @@
     <title>Edit a Watch</title>
   </head>
   <body>
+    <div class="form-con">
     <h1>Edit a Watch</h1>
     <form action="/watches/<%= watch._id %>?_method=PUT" method="post">
         <label for="company">Company: </label>
@@ -26,9 +27,10 @@
        <input type="text" name="price" id="price" min="0" required value="<%= watch.price %>">
 
        <label for="imglink">Image Link: </label>
-        <input type="text" name="imglink" id="imglink" required value="watch.imglink">
+        <input type="text" name="imglink" id="imglink" required value="<%=watch.imglink%>">
 
         <button type="submit">Edit a watch</button>
     </form>
+    </div>
   </body>
 </html>
