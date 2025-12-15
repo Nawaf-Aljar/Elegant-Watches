@@ -14,7 +14,7 @@
 
 ## Website Screenshots:
 
-![Homepage]()
+![Homepage](/public/assets/showpage.png)
 
 ## User Stories:  
 
