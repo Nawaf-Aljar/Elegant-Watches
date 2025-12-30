@@ -1,4 +1,5 @@
 # Elegant Watches
+Elegant Watches is a simple web app that allows users to manage a personal collection of luxury watches. Users can sign up, log in, and easily add, view, edit, or delete watch records, each with detailed descriptions. The app provides a clean interface for displaying watch collections while laying the groundwork for future features like featured watches, reviews, and enhanced design and database improvements.
 
 ## Features:
 
